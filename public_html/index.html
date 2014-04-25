@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$("#my_button").click(function(){
+				console.log("click");
+				var winner=$("#winner").val();
+				$.post("post.html", {the_winner:winner}, function(result){
+					console.log("got it");
+					$("#output_log").append(result);
+				});
+			});
+		})
+		</script>
+	</head>
+	
+	<body>
+		<title>Literally Canvas</title>
+		<h1>unity web server</h1>
+		<img src="bear.png" alt="Bear">
+		<form method="post">
+			Winner: <input type="text" id="winner" name="the_winner">
+			<br/>
+			<input type="submit" id="my_button" value="My Button" onclick="return false;">
+		</form>
+		
+		<div id="output_log"></div>
+		
+	</body>
+</html>
