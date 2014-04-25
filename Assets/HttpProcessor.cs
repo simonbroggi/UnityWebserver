@@ -47,7 +47,6 @@ public class HttpProcessor {
 					break;
 				case "POST":
 					yield return srv.StartCoroutine(handlePostRequest());
-					Debug.LogWarning("todo: controll stuff in unity");
 					break;
 				default:
 					Debug.LogError("Unknown http_method " + http_method);

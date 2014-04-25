@@ -97,9 +97,10 @@ public class UnityServer : MonoBehaviour {
 	}
 	public IEnumerator handlePostRequest(HttpProcessor p, byte[] data){
 		Debug.Log("Handling POST: "+p.http_url);
-		Debug.Log(Encoding.UTF8.GetString(data));
+		Debug.LogWarning("todo: controll unity with "+Encoding.UTF8.GetString(data));
 		p.writeSuccess();
 		p.writeLine("<h1>unity web server posted</h1></br>");
+
 		yield break;
 	}
 }
